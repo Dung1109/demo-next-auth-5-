@@ -1,23 +1,23 @@
 import NextAuth, { User, NextAuthConfig } from "next-auth";
 import credentials from "next-auth/providers/credentials";
 
-export const BASE_PATH = "/api/path";
+export const BASE_PATH = "/api/auth";
 
 const authOptions: NextAuthConfig = {
   providers: [
     credentials({
       name: "Credentials",
       credentials: {
-        username: { label: "Username", type: "text" , placeholder: "Namct"},
+        username: { label: "Username", type: "text" , placeholder: "Enter username"},
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials): Promise<User | null> {
         const users = [
             {
                 id: "test-user-1",
-                userName: "test1",
+                userName: "namct",
                 name: "Test 1",
-                password: "pass",
+                password: "namct",
                 email: "test1@donotreply.com",
               },
               {
